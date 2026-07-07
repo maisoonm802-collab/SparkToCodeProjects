@@ -58,4 +58,21 @@
 
                 Console.WriteLine($"Current page: {history.Peek()}");
             }
+            
+            // Task 4 - Customer Service Queue
+        
+            static void CustomerServiceQueue()
+            {
+                Queue<string> customers = new Queue<string>();
+
+                for (int i = 0; i < 3; i++)
+                {
+                    Console.Write($"Enter customer name {i + 1}: ");
+                    customers.Enqueue(Console.ReadLine());
+                }
+
+                string servedCustomer = customers.Dequeue();
+
+                Console.WriteLine($"Served customer: {servedCustomer}");
+            }
 
