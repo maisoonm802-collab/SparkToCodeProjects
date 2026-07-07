@@ -33,3 +33,13 @@
         {
             return number % 2 == 0;
         }
+        // Task 6 - Rectangle Area &Perimeter Functions
+        static double CalculateArea(double length, double width)
+        {
+            return length * width;
+        }
+
+        static double CalculatePerimeter(double length, double width)
+        {
+            return 2 * (length + width);
+        }
