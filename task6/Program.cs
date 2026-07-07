@@ -41,5 +41,21 @@
                 Console.WriteLine($"{number}. {task}");
                 number++;
             }
-        
+            // Task 3 - Browser History Stack
+            // ==========================
+
+            static void BrowserHistoryStack()
+            {
+                Stack<string> history = new Stack<string>();
+
+                for (int i = 0; i < 3; i++)
+                {
+                    Console.Write($"Enter website URL {i + 1}: ");
+                    history.Push(Console.ReadLine());
+                }
+
+                history.Pop();
+
+                Console.WriteLine($"Current page: {history.Peek()}");
+            }
 
