@@ -21,3 +21,15 @@
         {
             return (celsius * 9 / 5) + 32;
         }
+        // Task 4 - Fixed Menu Display Function
+        static void DisplayMenu()
+        {
+            Console.WriteLine("1) Start");
+            Console.WriteLine("2) Help");
+            Console.WriteLine("3) Exit");
+        }
+        // Task 5 - Even or Odd Function
+        static bool IsEven(int number)
+        {
+            return number % 2 == 0;
+        }
