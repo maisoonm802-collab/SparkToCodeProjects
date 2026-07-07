@@ -4,7 +4,11 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            // Task 1 - Personalized Welcome Function
+            static void PrintWelcome(string name)
+            {
+                Console.WriteLine("Welcome, " + name + "!");
+            }
         }
     }
 }
