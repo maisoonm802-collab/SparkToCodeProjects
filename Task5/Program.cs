@@ -75,3 +75,20 @@
                 Console.WriteLine(i);
             }
         }
+        // Task 9 - Overloaded Multiply Functions
+        static int Multiply(int a, int b)
+        {
+            return a * b;
+        }
+
+        static double Multiply(double a, double b)
+        {
+            return a * b;
+        }
+
+        static int Multiply(int a, int b, int c)
+        {
+            return a * b * c;
+        }
+    }
+}
