@@ -10,5 +10,9 @@
                 Console.WriteLine("Welcome, " + name + "!");
             }
         }
-    }
-}
+
+        // Task 2 - Square Number Function
+        static int Square(int number)
+        {
+            return number * number;
+        }
