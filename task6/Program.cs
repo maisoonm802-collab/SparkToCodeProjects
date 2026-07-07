@@ -21,18 +21,18 @@
                     Console.WriteLine(grade);
                 }
             }
-        
-      // Task 2 - Dynamic To-Do List
-      
+
+            // Task 2 - Dynamic To-Do List
+
             List<string> tasks = new List<string>();
 
-            for (int i = 0; i< 5; i++)
+            for (int i = 0; i < 5; i++)
             {
                 Console.Write($"Enter task {i + 1}: ");
                 tasks.Add(Console.ReadLine());
             }
 
-    Console.WriteLine("\nTo-Do List:");
+            Console.WriteLine("\nTo-Do List:");
 
             int number = 1;
 
@@ -58,9 +58,9 @@
 
                 Console.WriteLine($"Current page: {history.Peek()}");
             }
-            
+
             // Task 4 - Customer Service Queue
-        
+
             static void CustomerServiceQueue()
             {
                 Queue<string> customers = new Queue<string>();
@@ -99,7 +99,7 @@
                 Console.WriteLine($"Average Grade: {average}");
             }
             // Task 6 - Filtered Shopping List
-         
+
             static void FilteredShoppingList()
             {
                 List<string> shoppingList = new List<string>();
@@ -136,4 +136,28 @@
                     Console.WriteLine(i);
                 }
             }
+            // Task 7 - High Score Podium
+            // ==========================
+
+            static void HighScorePodium()
+            {
+                List<int> scores = new List<int>();
+
+                for (int i = 0; i < 5; i++)
+                {
+                    Console.Write($"Enter score {i + 1}: ");
+                    scores.Add(Convert.ToInt32(Console.ReadLine()));
+                }
+
+                scores.Sort();
+                scores.Reverse();
+
+                Console.WriteLine("\nTop 3 Scores:");
+                Console.WriteLine($"1st Place: {scores[0]}");
+                Console.WriteLine($"2nd Place: {scores[1]}");
+                Console.WriteLine($"3rd Place: {scores[2]}");
+            }
+        }
+    }
+}
 
