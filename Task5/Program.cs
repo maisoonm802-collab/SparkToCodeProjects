@@ -67,4 +67,11 @@
                 return "F";
             }
         }
-
+        // Task 8 - Countdown Function
+        static void Countdown(int number)
+        {
+            for (int i = number; i >= 1; i--)
+            {
+                Console.WriteLine(i);
+            }
+        }
