@@ -75,4 +75,27 @@
 
                 Console.WriteLine($"Served customer: {servedCustomer}");
             }
+            // Task 5 - Array Grade Range
+            // ==========================
+
+            static void ArrayGradeRange()
+            {
+                int[] grades = new int[5];
+                int sum = 0;
+
+                for (int i = 0; i < grades.Length; i++)
+                {
+                    Console.Write($"Enter grade {i + 1}: ");
+                    grades[i] = Convert.ToInt32(Console.ReadLine());
+                    sum += grades[i];
+                }
+
+                Array.Sort(grades);
+
+                double average = (double)sum / grades.Length;
+
+                Console.WriteLine($"\nLowest Grade: {grades[0]}");
+                Console.WriteLine($"Highest Grade: {grades[grades.Length - 1]}");
+                Console.WriteLine($"Average Grade: {average}");
+            }
 
