@@ -36,4 +36,16 @@ Console.WriteLine("\n--- Task 2 ---");
             double celsius = Convert.ToDouble(Console.ReadLine());
             double fahrenheit = CelsiusToFahrenheit(celsius);
             Console.WriteLine("Fahrenheit = " + fahrenheit);
+            ///Task4\\\\\\\\\\\\
+            Console.WriteLine("\n--- Task 4 ---");
+            static void DisplayMenu()
+            {
+                Console.WriteLine("1. Start");
+                Console.WriteLine("2. Help");
+                Console.WriteLine("3. Exit");
+            }
 
+            static void Main(string[] args)
+            {
+                DisplayMenu();
+            }
