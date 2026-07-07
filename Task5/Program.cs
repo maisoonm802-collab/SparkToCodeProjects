@@ -16,3 +16,8 @@
         {
             return number * number;
         }
+        // Task 3 - Celsius to Fahrenheit Function
+        static double CelsiusToFahrenheit(double celsius)
+        {
+            return (celsius * 9 / 5) + 32;
+        }
