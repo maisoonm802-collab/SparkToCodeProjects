@@ -2,4 +2,5 @@
   <Project Path="CsharpSession1/CsharpSession1.csproj" Id="18bfe58d-23b6-4971-b99c-db9716010169" />
   <Project Path="Task3/Task3.csproj" Id="cb2477bc-6de4-4728-b408-cece9759f935" />
   <Project Path="Task4/Task 4/Task 4.csproj" Id="3161a1cb-0292-4e9e-b4de-e73fd9aca3b9" />
+  <Project Path="Task5/Task5.csproj" Id="e606157c-c65d-4631-98a4-85f9ae70c533" />
 </Solution>
