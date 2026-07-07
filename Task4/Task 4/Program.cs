@@ -16,6 +16,14 @@
 
                 PrintWelcome(name);
             }
-        }
-    }
-}
+            ///Task2\\\\\\\\\\\\
+Console.WriteLine("\n--- Task 2 ---");
+            Console.Write("Enter a number: ");
+
+            int number = Convert.ToInt32(Console.ReadLine());
+
+            int result = Square(number);
+
+            Console.WriteLine("Square = " + result);
+
+
