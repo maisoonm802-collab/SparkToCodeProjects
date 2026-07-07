@@ -38,14 +38,24 @@ Console.WriteLine("\n--- Task 2 ---");
             Console.WriteLine("Fahrenheit = " + fahrenheit);
             ///Task4\\\\\\\\\\\\
             Console.WriteLine("\n--- Task 4 ---");
-            static void DisplayMenu()
-            {
+            
                 Console.WriteLine("1. Start");
                 Console.WriteLine("2. Help");
                 Console.WriteLine("3. Exit");
-            }
+            DisplayMenu();
+            
+            ///Task5\\\\\\\\\\\\
+            Console.WriteLine("\n--- Task 5 ---");
+            Console.Write("Enter a number: ");
+            int number = Convert.ToInt32(Console.ReadLine());
 
-            static void Main(string[] args)
+            bool result = IsEven(number);
+
+            if (result)
             {
-                DisplayMenu();
+                Console.WriteLine("Even");
+            }
+            else
+            {
+                Console.WriteLine("Odd");
             }
