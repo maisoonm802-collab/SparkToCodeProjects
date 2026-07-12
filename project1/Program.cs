@@ -1,8 +1,15 @@
-﻿namespace project1
+﻿using System;
+using System.Collections.Generic;
+
+namespace project1
 {
     internal class Program
     {
         // Parallel Lists
+        static List<string> customerNames = new List<string>();
+        static List<string> accountNumbers = new List<string>();
+        static List<double> balances = new List<double>();
+
         static void Main(string[] args)
         {
             bool exitApp = false;
@@ -33,15 +40,96 @@
                     continue;
                 }
 
+                switch (choice)
+                {
+                    case 1:
+                        AddAccount();
+                        break;
+
+                    case 2:
+                        DepositMoney();
+                        break;
+
+                    case 3:
+                        WithdrawMoney();
+                        break;
+
+                    case 4:
+                        ShowBalance();
+                        break;
+
+                    case 5:
+                        TransferAmount();
+                        break;
+
+                    case 6:
+                        ListAllAccounts();
+                        break;
+
+                    case 7:
+                        CloseAccount();
+                        break;
+
+                    case 8:
+                        exitApp = true;
+                        Console.WriteLine("Thank you for using Spark Bank!");
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid choice.");
+                        break;
+                }
             }
         }
-    }
-}
-        
-            
-        
-    
+        // ==========================
+        // Add New Account
+        // ==========================
+        static void AddAccount()
+        {
+            Console.Write("Enter customer name: ");
+            string name = Console.ReadLine();
 
-        
-    
+            Console.Write("Enter account number: ");
+            string account = Console.ReadLine();
+
+            if (accountNumbers.Contains(account))
+            {
+                Console.WriteLine("Account number already exists.");
+                return;
+            }
+
+            Console.Write("Enter initial deposit: ");
+
+            double amount;
+
+            try
+            {
+                amount = double.Parse(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine("Invalid amount.");
+                return;
+            }
+
+            if (amount < 0)
+            {
+                Console.WriteLine("Balance cannot be negative.");
+                return;
+            }
+
+            customerNames.Add(name);
+            accountNumbers.Add(account);
+            balances.Add(amount);
+
+            Console.WriteLine("\nAccount created successfully!");
+            Console.WriteLine($"Customer : {name}");
+            Console.WriteLine($"Account  : {account}");
+            Console.WriteLine($"Balance  : {amount}");
+        }
+
+
+
+
+
 
