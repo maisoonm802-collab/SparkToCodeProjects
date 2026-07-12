@@ -127,6 +127,46 @@ namespace project1
             Console.WriteLine($"Account  : {account}");
             Console.WriteLine($"Balance  : {amount}");
         }
+        // Deposit Money
+        // ==========================
+        static void DepositMoney()
+        {
+            Console.Write("Enter account number: ");
+            string account = Console.ReadLine();
+
+            int index = accountNumbers.IndexOf(account);
+
+            if (index == -1)
+            {
+                Console.WriteLine("Account not found.");
+                return;
+            }
+
+            Console.Write("Enter deposit amount: ");
+
+            double amount;
+
+            try
+            {
+                amount = double.Parse(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine("Invalid amount.");
+                return;
+            }
+
+            if (amount <= 0)
+            {
+                Console.WriteLine("Deposit must be greater than zero.");
+                return;
+            }
+
+            balances[index] += amount;
+
+            Console.WriteLine("Deposit successful.");
+            Console.WriteLine($"New Balance = {balances[index]}");
+        }
 
 
 
