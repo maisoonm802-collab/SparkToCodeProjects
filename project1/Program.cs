@@ -317,7 +317,23 @@ static void TransferAmount()
                 Console.WriteLine("----------------------------");
             }
         }
-
+        // Close Account
+        // ==========================
+        static void CloseAccount()
+        {
+            Console.Write("Enter account number to close: ");
+            string account = Console.ReadLine();
+            int index = accountNumbers.IndexOf(account);
+            if (index == -1)
+            {
+                Console.WriteLine("Account not found.");
+                return;
+            }
+            customerNames.RemoveAt(index);
+            accountNumbers.RemoveAt(index);
+            balances.RemoveAt(index);
+            Console.WriteLine("Account closed successfully.");
+        }
 
 
 
