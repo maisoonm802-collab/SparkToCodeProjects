@@ -299,7 +299,24 @@ static void TransferAmount()
                 $"Receiver New Balance ({accountNumbers[receiverIndex]}) = {balances[receiverIndex]}"
             );
         }
-
+        // List All Accounts
+        // ==========================
+        static void ListAllAccounts()
+        {
+            if (customerNames.Count == 0)
+            {
+                Console.WriteLine("No accounts found.");
+                return;
+            }
+            Console.WriteLine("\n===== All Accounts =====");
+            for (int i = 0; i < customerNames.Count; i++)
+            {
+                Console.WriteLine($"Customer Name : {customerNames[i]}");
+                Console.WriteLine($"Account Number: {accountNumbers[i]}");
+                Console.WriteLine($"Balance       : {balances[i]}");
+                Console.WriteLine("----------------------------");
+            }
+        }
 
 
 
