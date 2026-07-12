@@ -214,8 +214,27 @@ static void WithdrawMoney()
             Console.WriteLine("Withdrawal successful.");
             Console.WriteLine($"New Balance = {balances[index]}");
         }
+    
+    // Show Balance
+    // ==========================
+static void ShowBalance()
+{
+    Console.Write("Enter account number: ");
+    string account = Console.ReadLine();
+
+    int index = accountNumbers.IndexOf(account);
+
+    if (index == -1)
+    {
+        Console.WriteLine("Account not found.");
+        return;
     }
 
+    Console.WriteLine("\n===== Account Details =====");
+    Console.WriteLine($"Customer Name : {customerNames[index]}");
+    Console.WriteLine($"Account Number: {accountNumbers[index]}");
+    Console.WriteLine($"Balance       : {balances[index]}");
+}
 
 
 
