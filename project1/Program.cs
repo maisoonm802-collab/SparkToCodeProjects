@@ -234,8 +234,71 @@ static void ShowBalance()
     Console.WriteLine($"Customer Name : {customerNames[index]}");
     Console.WriteLine($"Account Number: {accountNumbers[index]}");
     Console.WriteLine($"Balance       : {balances[index]}");
-}
+        }
+        / Transfer Amount
+// ==========================
+static void TransferAmount()
+        {
+            Console.Write("Enter sender account number: ");
+            string sender = Console.ReadLine();
 
+            Console.Write("Enter receiver account number: ");
+            string receiver = Console.ReadLine();
+
+            int senderIndex = accountNumbers.IndexOf(sender);
+            int receiverIndex = accountNumbers.IndexOf(receiver);
+
+            if (senderIndex == -1)
+            {
+                Console.WriteLine("Sender account not found.");
+                return;
+            }
+
+            if (receiverIndex == -1)
+            {
+                Console.WriteLine("Receiver account not found.");
+                return;
+            }
+
+            Console.Write("Enter transfer amount: ");
+
+            double amount;
+
+            try
+            {
+                amount = double.Parse(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine("Invalid amount.");
+                return;
+            }
+
+            if (amount <= 0)
+            {
+                Console.WriteLine("Amount must be greater than zero.");
+                return;
+            }
+
+            if (amount > balances[senderIndex])
+            {
+                Console.WriteLine("Insufficient balance.");
+                return;
+            }
+
+            balances[senderIndex] -= amount;
+            balances[receiverIndex] += amount;
+
+            Console.WriteLine("\nTransfer completed successfully!");
+
+            Console.WriteLine(
+                $"Sender New Balance ({accountNumbers[senderIndex]}) = {balances[senderIndex]}"
+            );
+
+            Console.WriteLine(
+                $"Receiver New Balance ({accountNumbers[receiverIndex]}) = {balances[receiverIndex]}"
+            );
+        }
 
 
 
