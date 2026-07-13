@@ -441,7 +441,212 @@
 
 
                             break;
-                    
+                        // Case 9 - Transfer Between Accounts
+                        case 9:
+
+                            Console.Write("Source Account (1/2): ");
+                            int source = int.Parse(Console.ReadLine());
+
+                            Console.Write("Destination Account (1/2): ");
+                            int destination = int.Parse(Console.ReadLine());
+
+                            Console.Write("Amount: ");
+                            double transferAmount = double.Parse(Console.ReadLine());
+
+
+                            BankAccount sourceAccount;
+                            BankAccount destinationAccount;
+
+
+                            if (source == 1)
+                                sourceAccount = account1;
+                            else
+                                sourceAccount = account2;
+
+
+                            if (destination == 1)
+                                destinationAccount = account1;
+                            else
+                                destinationAccount = account2;
+
+
+
+                            if (sourceAccount.Balance >= transferAmount)
+                            {
+                                sourceAccount.Withdraw(transferAmount);
+                                destinationAccount.Deposit(transferAmount);
+
+                                Console.WriteLine("Transfer completed successfully.");
+                            }
+
+                            else
+                            {
+                                Console.WriteLine("Transfer failed. Not enough balance.");
+                            }
+
+                            break;
+
+
+
+
+                        // Case 10 - Update Student Grade
+                        case 10:
+
+                            Console.Write("Choose Student (1/2): ");
+                            int updateStudent = int.Parse(Console.ReadLine());
+
+                            Console.Write("Enter new grade: ");
+                            string gradeInput = Console.ReadLine();
+
+
+                            int grade;
+
+
+                            if (int.TryParse(gradeInput, out grade) == false)
+                            {
+                                Console.WriteLine("Invalid grade.");
+                                break;
+                            }
+
+
+                            if (grade < 0 || grade > 100)
+                            {
+                                Console.WriteLine("Grade must be between 0 and 100.");
+                                break;
+                            }
+
+
+
+                            if (updateStudent == 1)
+                                student1.Grade = grade;
+
+                            else if (updateStudent == 2)
+                                student2.Grade = grade;
+
+
+                            Console.WriteLine("Grade updated.");
+
+                            break;
+
+
+
+
+
+                        // Case 11 - Student Report Card
+                        case 11:
+
+                            Console.Write("Choose Student (1/2): ");
+                            int reportChoice = int.Parse(Console.ReadLine());
+
+
+                            Student reportStudent;
+
+
+                            if (reportChoice == 1)
+                                reportStudent = student1;
+
+                            else
+                                reportStudent = student2;
+
+
+
+                            Console.WriteLine("Name: " + reportStudent.Name);
+                            Console.WriteLine("Address: " + reportStudent.Address);
+                            Console.WriteLine("Grade: " + reportStudent.Grade);
+
+
+
+                            if (reportStudent.Grade >= 60)
+                                Console.WriteLine("Pass");
+
+                            else
+                                Console.WriteLine("Fail");
+
+
+                            break;
+
+
+
+
+
+
+                        // Case 12 - Account Health Status
+                        case 12:
+
+                            Console.Write("Choose Account (1/2): ");
+                            int healthChoice = int.Parse(Console.ReadLine());
+
+
+                            BankAccount healthAccount;
+
+
+                            if (healthChoice == 1)
+                                healthAccount = account1;
+
+                            else
+                                healthAccount = account2;
+
+
+
+                            if (healthAccount.Balance < 50)
+                                Console.WriteLine("Low Balance");
+
+                            else if (healthAccount.Balance <= 1000)
+                                Console.WriteLine("Healthy");
+
+                            else
+                                Console.WriteLine("Premium");
+
+
+                            break;
+
+
+
+
+
+
+                        // Case 13 - Bulk Sale
+                        case 13:
+
+                            Console.Write("Choose Product (1/2): ");
+                            int saleChoice = int.Parse(Console.ReadLine());
+
+                            Console.Write("Quantity: ");
+                            int saleQuantity = int.Parse(Console.ReadLine());
+
+
+                            Product saleProduct;
+
+
+                            if (saleChoice == 1)
+                                saleProduct = product1;
+
+                            else
+                                saleProduct = product2;
+
+
+
+                            if (saleProduct.StockQuantity < saleQuantity)
+                            {
+                                int needed = saleQuantity - saleProduct.StockQuantity;
+
+                                Console.WriteLine("Not enough stock.");
+                                Console.WriteLine("Need extra units: " + needed);
+                            }
+
+                            else
+                            {
+                                saleProduct.Sell(saleQuantity);
+
+                                double revenue =
+                                    saleQuantity * saleProduct.Price;
+
+
+                                Console.WriteLine("Revenue: " + revenue);
+                            }
+
+
+                            break;
 
 
 
