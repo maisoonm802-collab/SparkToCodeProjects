@@ -241,11 +241,210 @@
 
                     Console.Write("Choose: ");
                     int choice = int.Parse(Console.ReadLine());
-                }
-            }
-        }
-    }
-    }
 
+                    switch (choice)
+                    {
+                        // Case 1
+                        case 1:
+
+                            Console.Write("Choose Account (1/2): ");
+                            int accountChoice = int.Parse(Console.ReadLine());
+
+                            if (accountChoice == 1)
+                                account1.CheckBalance();
+
+                            else if (accountChoice == 2)
+                                account2.CheckBalance();
+
+                            break;
+
+
+
+                        // Case 2
+                        case 2:
+
+                            Console.Write("Choose Student (1/2): ");
+                            int studentChoice = int.Parse(Console.ReadLine());
+
+                            Console.Write("Enter new address: ");
+                            string newAddress = Console.ReadLine();
+
+
+                            if (studentChoice == 1)
+                            {
+                                student1.Address = newAddress;
+                                Console.WriteLine("Address updated: " + student1.Address);
+                            }
+
+                            else if (studentChoice == 2)
+                            {
+                                student2.Address = newAddress;
+                                Console.WriteLine("Address updated: " + student2.Address);
+                            }
+
+                            break;
+
+
+
+                        // Case 3
+                        case 3:
+
+                            Console.Write("Choose Account (1/2): ");
+                            int depositAccount = int.Parse(Console.ReadLine());
+
+                            Console.Write("Amount: ");
+                            double depositAmount = double.Parse(Console.ReadLine());
+
+
+                            if (depositAccount == 1)
+                            {
+                                account1.Deposit(depositAmount);
+                                Console.WriteLine("Balance: " + account1.Balance);
+                            }
+
+                            else if (depositAccount == 2)
+                            {
+                                account2.Deposit(depositAmount);
+                                Console.WriteLine("Balance: " + account2.Balance);
+                            }
+
+                            break;
+
+
+
+                        // Case 4
+                        case 4:
+
+                            Console.Write("Choose Account (1/2): ");
+                            int withdrawAccount = int.Parse(Console.ReadLine());
+
+                            Console.Write("Amount: ");
+                            double withdrawAmount = double.Parse(Console.ReadLine());
+
+
+                            if (withdrawAccount == 1)
+                            {
+                                account1.Withdraw(withdrawAmount);
+                                Console.WriteLine("Balance: " + account1.Balance);
+                            }
+
+                            else if (withdrawAccount == 2)
+                            {
+                                account2.Withdraw(withdrawAmount);
+                                Console.WriteLine("Balance: " + account2.Balance);
+                            }
+
+                            break;
+
+
+
+                        // Case 5
+                        case 5:
+
+                            Console.Write("Choose Product (1/2): ");
+                            int productChoice = int.Parse(Console.ReadLine());
+
+
+                            if (productChoice == 1)
+                            {
+                                Console.WriteLine(
+                                    "Inventory Value: " +
+                                    product1.GetInventoryValue());
+                            }
+
+                            else if (productChoice == 2)
+                            {
+                                Console.WriteLine(
+                                    "Inventory Value: " +
+                                    product2.GetInventoryValue());
+                            }
+
+                            break;
+
+
+
+
+                        // Case 6
+                        case 6:
+
+                            Console.Write("Choose Student (1/2): ");
+                            int registerStudent = int.Parse(Console.ReadLine());
+
+                            Console.Write("Enter Email: ");
+                            string email = Console.ReadLine();
+
+
+                            if (registerStudent == 1)
+                                student1.Register(email);
+
+                            else if (registerStudent == 2)
+                                student2.Register(email);
+
+
+                            Console.WriteLine("Registration completed.");
+
+                            break;
+
+
+
+
+
+                        // Case 7
+                        case 7:
+
+                            if (account1.Balance > account2.Balance)
+                                Console.WriteLine("Account 1 has more money.");
+
+                            else if (account2.Balance > account1.Balance)
+                                Console.WriteLine("Account 2 has more money.");
+
+                            else
+                                Console.WriteLine("Both accounts are equal.");
+
+                            break;
+
+
+
+
+
+                        // Case 8
+                        case 8:
+
+                            Console.Write("Choose Product (1/2): ");
+                            int restockProduct = int.Parse(Console.ReadLine());
+
+                            Console.Write("Quantity: ");
+                            int restock = int.Parse(Console.ReadLine());
+
+
+                            Product restockItem;
+
+                            if (restockProduct == 1)
+                                restockItem = product1;
+
+                            else
+                                restockItem = product2;
+
+
+                            restockItem.Restock(restock);
+
+
+
+                            if (restockItem.StockQuantity < 10)
+                                Console.WriteLine("Low");
+
+                            else if (restockItem.StockQuantity <= 49)
+                                Console.WriteLine("Moderate");
+
+                            else
+                                Console.WriteLine("Well Stocked");
+
+
+                            break;
                     
+
+
+
+
+
 
