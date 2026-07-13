@@ -647,6 +647,254 @@
 
 
                             break;
+                        // Case 14 - Scholarship Eligibility Check
+                        case 14:
+
+                            Console.Write("Choose Student (1/2): ");
+                            int scholarshipStudent = int.Parse(Console.ReadLine());
+
+                            Console.Write("Choose Account (1/2): ");
+                            int scholarshipAccount = int.Parse(Console.ReadLine());
+
+
+                            Student selectedStudent;
+
+
+                            if (scholarshipStudent == 1)
+                                selectedStudent = student1;
+
+                            else
+                                selectedStudent = student2;
+
+
+
+                            BankAccount selectedAccount;
+
+
+                            if (scholarshipAccount == 1)
+                                selectedAccount = account1;
+
+                            else
+                                selectedAccount = account2;
+
+
+
+                            if (selectedStudent.Grade >= 80 &&
+                               selectedAccount.Balance >= 100)
+                            {
+                                Console.WriteLine("Eligible");
+                            }
+
+                            else
+                            {
+                                Console.WriteLine("Not Eligible");
+
+                                if (selectedStudent.Grade < 80)
+                                    Console.WriteLine("Failed: Grade is below 80");
+
+                                if (selectedAccount.Balance < 100)
+                                    Console.WriteLine("Failed: Balance is below 100");
+                            }
+
+
+                            break;
+
+
+
+
+
+
+                        // Case 15 - Full Balance Top-Up Flow
+                        case 15:
+
+                            Console.Write("Choose Account (1/2): ");
+                            int topChoice = int.Parse(Console.ReadLine());
+
+
+                            BankAccount topAccount;
+
+
+                            if (topChoice == 1)
+                                topAccount = account1;
+
+                            else
+                                topAccount = account2;
+
+
+
+                            Console.WriteLine("Before: " + topAccount.Balance);
+
+
+
+                            if (topAccount.Balance < 50)
+                            {
+                                double neededAmount = 100 - topAccount.Balance;
+
+
+                                topAccount.Deposit(neededAmount);
+
+
+                                Console.WriteLine("Top-up amount: " + neededAmount);
+                                Console.WriteLine("After: " + topAccount.Balance);
+                            }
+
+                            else
+                            {
+                                Console.WriteLine("No top-up needed.");
+                            }
+
+
+                            break;
+
+
+
+
+
+
+
+                        // Case 16 - Quick Account Opening
+                        case 16:
+
+                            Console.Write("Account Number: ");
+                            int number = int.Parse(Console.ReadLine());
+
+                            Console.Write("Holder Name: ");
+                            string holder = Console.ReadLine();
+
+                            Console.Write("Starting Balance: ");
+                            double balance = double.Parse(Console.ReadLine());
+
+
+                            BankAccount newAccount =
+                                new BankAccount(number, holder, balance);
+
+
+                            Console.WriteLine("New Account Created:");
+                            newAccount.CheckBalance();
+
+
+                            break;
+
+
+
+
+
+
+                        // Case 17 - Total Students Counter
+                        case 17:
+
+                            Console.WriteLine(
+                                "Total Students: " +
+                                Student.GetStudentCount()
+                            );
+
+                            break;
+
+
+
+
+
+
+                        // Case 18 - Overdrawn Account Check
+                        case 18:
+
+                            Console.Write("Choose Account (1/2): ");
+                            int overChoice = int.Parse(Console.ReadLine());
+
+
+                            BankAccount overAccount;
+
+
+                            if (overChoice == 1)
+                                overAccount = account1;
+
+                            else
+                                overAccount = account2;
+
+
+
+                            if (overAccount.IsOverdrawn)
+                                Console.WriteLine("Account is Overdrawn.");
+
+                            else
+                                Console.WriteLine("Account is not Overdrawn.");
+
+
+                            break;
+
+
+
+
+
+
+
+                        // Case 19 - Set Student Security PIN
+                        case 19:
+
+                            Console.Write("Choose Student (1/2): ");
+                            int pinChoice = int.Parse(Console.ReadLine());
+
+
+                            Console.Write("Enter 4-digit PIN: ");
+                            string pin = Console.ReadLine();
+
+
+
+                            if (pin.Length != 4)
+                            {
+                                Console.WriteLine("PIN must be 4 digits.");
+                                break;
+                            }
+
+
+
+                            if (pinChoice == 1)
+                            {
+                                student1.SecurityPIN = pin;
+                            }
+
+                            else if (pinChoice == 2)
+                            {
+                                student2.SecurityPIN = pin;
+                            }
+
+
+
+                            Console.WriteLine("PIN set successfully.");
+
+                            break;
+
+
+
+
+
+
+                        // Exit
+                        case 20:
+
+                            exit = true;
+
+                            Console.WriteLine("Goodbye!");
+
+                            break;
+
+
+
+                        default:
+
+                            Console.WriteLine("Invalid choice.");
+
+                            break;
+
+                    }
+
+                }
+
+            }
+
+        }
+    }
+} 
 
 
 
