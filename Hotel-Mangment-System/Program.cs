@@ -42,9 +42,29 @@ namespace Hotel_Mangment_System
 
                 switch (choice)
                 {
-                    case 0:
-                        exit = true;
+                    case 1:
+
+                        Console.Write("Enter Room Number: ");
+                        int roomNumber = int.Parse(Console.ReadLine());
+
+                        Console.Write("Enter Room Type: ");
+                        string roomType = Console.ReadLine();
+
+                        Console.Write("Enter Price Per Night: ");
+                        double price = double.Parse(Console.ReadLine());
+
+                        Room newRoom = new Room(
+                            roomNumber,
+                            roomType,
+                            price,
+                            true);
+
+                        rooms.Add(newRoom);
+
+                        Console.WriteLine("Room Added Successfully!");
+
                         break;
+
                 }
             }
 
