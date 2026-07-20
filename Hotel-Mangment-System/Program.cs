@@ -93,6 +93,30 @@ namespace Hotel_Mangment_System
                         Console.WriteLine("Guest Registered!");
 
                         break;
+                    case 3:
+
+                        Console.Write("Enter Room Number: ");
+                        int bookRoom =
+                            int.Parse(Console.ReadLine());
+
+                        Room roomToBook =
+                            rooms.FirstOrDefault(
+                                r => r.roomNumber == bookRoom);
+
+                        if (roomToBook != null)
+                        {
+                            roomToBook.isAvailable = false;
+
+                            Console.WriteLine(
+                                "Room Booked Successfully!");
+                        }
+                        else
+                        {
+                            Console.WriteLine(
+                                "Room Not Found!");
+                        }
+
+                        break;
 
                 }
             }
