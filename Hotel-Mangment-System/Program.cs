@@ -64,6 +64,35 @@ namespace Hotel_Mangment_System
                         Console.WriteLine("Room Added Successfully!");
 
                         break;
+                    case 2:
+
+                        Console.Write("Guest ID: ");
+                        string guestId = Console.ReadLine();
+
+                        Console.Write("Guest Name: ");
+                        string guestName = Console.ReadLine();
+
+                        Console.Write("Room Number: ");
+                        string guestRoom = Console.ReadLine();
+
+                        Console.Write("Check In Date: ");
+                        string date = Console.ReadLine();
+
+                        Console.Write("Total Nights: ");
+                        int nights = int.Parse(Console.ReadLine());
+
+                        Guest guest = new Guest(
+                            guestId,
+                            guestName,
+                            guestRoom,
+                            date,
+                            nights);
+
+                        guests.Add(guest);
+
+                        Console.WriteLine("Guest Registered!");
+
+                        break;
 
                 }
             }
