@@ -29,6 +29,22 @@ namespace Hotel_Mangment_System
             Console.WriteLine(
                 $"{guestId} - {guestName}");
         }
+        public double calculateTotalCost(
+    List<Room> rooms)
+        {
+            Room room =
+                rooms.FirstOrDefault(
+                    r => r.roomNumber.ToString()
+                    == roomNumber);
+
+            if (room != null)
+            {
+                return room.pricePerNight *
+                       totalNights;
+            }
+
+            return 0;
+        }
     }
 }
 

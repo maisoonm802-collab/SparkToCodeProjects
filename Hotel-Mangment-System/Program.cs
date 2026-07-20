@@ -221,7 +221,127 @@ namespace Hotel_Mangment_System
                         }
 
                         break;
+                    case 11:
 
+                        Console.Write("Enter Room Number: ");
+                        int checkoutRoom =
+                            int.Parse(Console.ReadLine());
+
+                        Room roomCheckout =
+                            rooms.FirstOrDefault(
+                                r => r.roomNumber == checkoutRoom);
+
+                        if (roomCheckout != null)
+                        {
+                            roomCheckout.isAvailable = true;
+
+                            Console.WriteLine(
+                                "Check Out Completed!");
+                        }
+                        else
+                        {
+                            Console.WriteLine(
+                                "Room Not Found!");
+                        }
+
+                        break;
+                    case 12:
+
+                        Console.Write("Enter Room Number: ");
+                        int removeRoom =
+                            int.Parse(Console.ReadLine());
+
+                        Room roomRemove =
+                            rooms.FirstOrDefault(
+                                r => r.roomNumber == removeRoom);
+
+                        if (roomRemove != null)
+                        {
+                            rooms.Remove(roomRemove);
+
+                            Console.WriteLine(
+                                "Room Removed!");
+                        }
+                        else
+                        {
+                            Console.WriteLine(
+                                "Room Not Found!");
+                        }
+
+                        break;
+                    case 13:
+
+                        Console.Write("Enter Guest ID: ");
+                        string guestID =
+                            Console.ReadLine();
+
+                        Guest guestExtend =
+                            guests.FirstOrDefault(
+                                g => g.guestId == guestID);
+
+                        if (guestExtend != null)
+                        {
+                            Console.Write(
+                                "Enter Additional Nights: ");
+
+                            int extra =
+                                int.Parse(Console.ReadLine());
+
+                            guestExtend.totalNights += extra;
+
+                            Console.WriteLine(
+                                "Stay Extended Successfully!");
+                        }
+                        else
+                        {
+                            Console.WriteLine(
+                                "Guest Not Found!");
+                        }
+
+                        break;
+                    case 14:
+
+                        double highest = 0;
+                        string highestGuestName = "";
+
+                        foreach (Guest g in guests)
+                        {
+                            double total =
+                                g.calculateTotalCost(rooms);
+
+                            if (total > highest)
+                            {
+                                highest = total;
+                                highestGuestName = g.guestName;
+                            }
+                        }
+
+                        Console.WriteLine(
+                            $"Highest Revenue Guest: {highestGuestName}");
+
+                        Console.WriteLine(
+                            $"Amount: {highest}");
+
+                        break;
+                    case 15:
+
+                        int count = 0;
+
+                        foreach (Room room in rooms)
+                        {
+                            room.displayRoom();
+
+                            count++;
+
+                            if (count % 3 == 0)
+                            {
+                                Console.WriteLine(
+                                    "Press Enter to continue...");
+                                Console.ReadLine();
+                            }
+                        }
+
+                        break;
                 }
             }
 
