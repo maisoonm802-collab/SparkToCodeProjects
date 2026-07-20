@@ -148,6 +148,79 @@ namespace Hotel_Mangment_System
                         }
 
                         break;
+                    case 7:
+
+                        Console.WriteLine($"Total Rooms: {rooms.Count}");
+                        Console.WriteLine($"Total Guests: {guests.Count}");
+
+                        int available = 0;
+
+                        foreach (Room room in rooms)
+                        {
+                            if (room.isAvailable)
+                            {
+                                available++;
+                            }
+                        }
+
+                        Console.WriteLine($"Available Rooms: {available}");
+
+                        break;
+                    case 8:
+
+                        Console.Write("Enter Room Number: ");
+                        int updateRoom =
+                            int.Parse(Console.ReadLine());
+
+                        Room roomUpdate =
+                            rooms.FirstOrDefault(
+                                r => r.roomNumber == updateRoom);
+
+                        if (roomUpdate != null)
+                        {
+                            Console.Write("Enter New Price: ");
+                            double newPrice =
+                                double.Parse(Console.ReadLine());
+
+                            roomUpdate.pricePerNight = newPrice;
+
+                            Console.WriteLine(
+                                "Price Updated Successfully!");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Room Not Found!");
+                        }
+
+                        break;
+                    case 9:
+
+                        Console.Write("Enter Guest ID: ");
+                        string id = Console.ReadLine();
+
+                        Guest foundGuest =
+                            guests.FirstOrDefault(
+                                g => g.guestId == id);
+
+                        if (foundGuest != null)
+                        {
+                            foundGuest.displayGuest();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Guest Not Found!");
+                        }
+
+                        break;
+                    case 10:
+
+                        foreach (Room room in rooms)
+                        {
+                            room.displayRoom();
+                            Console.WriteLine("----------------");
+                        }
+
+                        break;
 
                 }
             }
