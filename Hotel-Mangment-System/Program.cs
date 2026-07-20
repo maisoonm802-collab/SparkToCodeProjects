@@ -117,6 +117,15 @@ namespace Hotel_Mangment_System
                         }
 
                         break;
+                    case 4:
+
+                        foreach (Room room in rooms)
+                        {
+                            room.displayRoom();
+                            Console.WriteLine();
+                        }
+
+                        break;
 
                 }
             }
