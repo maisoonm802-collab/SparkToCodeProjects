@@ -134,6 +134,20 @@ namespace Hotel_Mangment_System
                         }
 
                         break;
+                    case 6:
+
+                        Console.Write("Enter Room Type: ");
+                        string searchType = Console.ReadLine();
+
+                        foreach (Room room in rooms)
+                        {
+                            if (room.roomType == searchType)
+                            {
+                                room.displayRoom();
+                            }
+                        }
+
+                        break;
 
                 }
             }
