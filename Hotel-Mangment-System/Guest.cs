@@ -24,6 +24,11 @@ namespace Hotel_Mangment_System
             this.checkInDate = checkInDate;
             this.totalNights = totalNights;
         }
+        public void displayGuest()
+        {
+            Console.WriteLine(
+                $"{guestId} - {guestName}");
+        }
     }
 }
 

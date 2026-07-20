@@ -126,6 +126,14 @@ namespace Hotel_Mangment_System
                         }
 
                         break;
+                    case 5:
+
+                        foreach (Guest guest1 in guests)
+                        {
+                            guest1.displayGuest();
+                        }
+
+                        break;
 
                 }
             }
