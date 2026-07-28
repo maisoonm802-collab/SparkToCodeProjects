@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ECommerceApp.Models
+namespace ECommerceApp
 {
     public class Product
     {
